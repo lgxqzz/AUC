@@ -18,8 +18,7 @@ out_function <- function(obj, ref, data, score,  Diagnosis_column){
   format_number(roc_train$ci)
 
   auc_train <- format_number(roc_train$ci)
-  # auc_test <- format_number(roc_test$ci)
-  
+
   out <- list(roc_train = roc_train, auc_train=auc_train)
   return(out)
 }
