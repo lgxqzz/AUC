@@ -16,7 +16,7 @@ out_function <- function(obj, ref, data, score,  Diagnosis_column, main)
   data <- data[data[, Diagnosis_column] %in% c(obj, ref), ]
   data[, Diagnosis_column] <- factor(data[, Diagnosis_column], levels = c(ref, obj))
   out_train <- data.frame(score = data[, score], True_respose = data[, Diagnosis_column])
-  if (is.null(mian)){
+  if (is.null(main)){
     main <- paste(obj, ref, sep="_")
   }
   roc_train <- roc_function(data=out_train, print.auc=T, name="training_set_final", main=main)
