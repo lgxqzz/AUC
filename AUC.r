@@ -11,7 +11,7 @@ format_number <- function(x)
 }
 
 # calcuate auc and save specificity, sensitivity, AUC, etc.
-out_function <- function(obj, ref, data, score,  Diagnosis_column, main=...)
+out_function <- function(obj, ref, data, score,  Diagnosis_column, main=NULL)
 {
   data <- data[data[, Diagnosis_column] %in% c(obj, ref), ]
   data[, Diagnosis_column] <- factor(data[, Diagnosis_column], levels = c(ref, obj))
